@@ -4,6 +4,7 @@
         <meta name="" content="">
         <meta charset="utf-8">
         <title>www.zhengfnagxing.com</title>
+        <!-- 正方体 -->
         <style>
             .conter{
                 width: 800px;
@@ -81,6 +82,7 @@
                 }
             }
         </style>
+        <!-- 图片转圈 -->
         <style>
             .pics{
                 width: 800px;
@@ -142,6 +144,7 @@
                 }
             }
         </style>
+        <!-- 卡牌反转 -->
         <style>
             .kapai{
                 width: 500px;
@@ -178,6 +181,7 @@
                 transform: rotateY(180deg);
             }
         </style>
+        <!-- 进度条 -->
         <style>
             .process{
                 width: 500px;
@@ -208,8 +212,105 @@
                 }
             }
         </style>
+        <!-- 鱼缸 -->
+        <style>
+            /* 外形 */
+            .fish{
+                width: 300px;
+                height: 300px;
+                margin: 50px auto;
+                border-radius: 50%;
+                border: 4px solid rgb(110, 103, 103);
+                position: relative;
+                /* background:rgba(61, 60, 68,1); */
+            }
+            /* 鱼盖 */
+            .fish::before{
+                content: '';
+                position:absolute;
+                width: 50%;
+                height: 40px;
+                transform: translateX(50%);
+                border-radius: 50%;
+                top: -10px;
+                left: 0;
+                background:rgba(61, 60, 68,1);
+                }
+             /* 透明反光 */
+            .fish::after{
+                content: '';
+                position:absolute;
+                width: 60%;
+                height: 80px;
+                transform: translateX(33%);
+                border-radius: 50%;
+                top: 50px;
+                left: 0;
+                background:rgba(61, 60, 68,0.1);
+            }
+            /* 水 */
+            .water{
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                top: 50%;
+                background-color: aqua;
+                /* 设置圆角 */
+                border-bottom-left-radius: 150px;
+                border-bottom-right-radius: 150px;
+            }
+            /* 设置阴影 */
+            .water::after{
+                content: '';
+                position:absolute ;
+                width: 100%;
+                height: 20px;
+                top: 100%;
+                background-color: rgb(128, 133, 133);
+                /* 设置圆角 */
+                border-radius: 50%;
+            }
+            /* 设置水上边的部分 */
+            .water::before{
+                content: '';
+                position:absolute ;
+                width: 100%;
+                height: 20px;
+                top: -10px;
+                background-color: rgb(65, 177, 177);
+                /* 设置圆角 */
+                border-radius: 50%;
+            }
+            /* 鱼 */
+            .fisher{
+                position: absolute;
+                width: 60px;
+                left: 20px;
+                top:22px;
+                animation: fishmove 5s infinite linear forwards;
+            }
+            .fisher img{
+                width: 100%;
+                height: 100%;
+            }
+            @keyframes fishmove{
+                0%{
+                    transform: translateX(0);
+                }
+                50%{
+                    transform: translateY(30px) translateX(200px);
+                }
+                55%{
+                    transform: translateX(200px) rotateY(180deg);
+                }
+                100%{
+                    transform:translateY(30px) translateX(0) rotateY(180deg);
+                }
+            }
+        </style>
     </head>
     <body>
+        <!-- 正方体 -->
         <div class="conter">
             <div class="zheng">
                 <div class="mian white">前</div>
@@ -220,6 +321,7 @@
                 <div class="mian yellow">下</div>
             </div>
         </div>
+        <!-- 图片转圈 -->
         <div class="pics">
             <ul>
                 <li><img src="img/001.jpg" alt=""></li>
@@ -230,14 +332,24 @@
                 <li><img src="img/琴男.jpg" alt=""></li>
             </ul>
         </div>
+        <!-- 卡牌反转 -->
         <div class="kapai">
             <ul>
                 <li><img src="img/伞男.jpg" alt=""></li>
                 <li><img src="img/琴男.jpg" alt=""></li>
             </ul>
         </div>
+        <!-- 进度条 -->
         <div class="process">
             <div class="content"></div>
+        </div>
+        <!-- 鱼缸 -->
+        <div class="fish">
+            <div class="water">
+                <div class="fisher">
+                    <img src="img/鱼.png" alt="">
+                </div>
+            </div>
         </div>
     </body>
 </html>
